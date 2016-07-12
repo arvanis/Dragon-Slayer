@@ -1,0 +1,30 @@
+#barbarian, #knight, #rogue {
+    width: 150px;
+    height: 250px;
+    margin: 30px;
+    display: inline-block;
+    border: 1px solid black;
+    
+    &:hover {
+        background-color: rgba(255,250,102,0.5);
+    }
+}
+
+
+// Wybór bohatera - checkbox
+
+#heroes input[type=radio] {
+    display:none;
+}
+ 
+#heroes input[type=radio] + label {
+    background-color: white;
+    height: 250px;
+    width: 150px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#heroes input[type=radio]:checked + label {
+    background-color: rgba(255,250,102,0.5);
+}
