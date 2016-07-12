@@ -11,14 +11,14 @@
     <body>
         <nav>
             <ul>
-                <li>Dziennik</li>
-                <li>Historia</li>
-                <li>Ognisko</li>
-                <li>Smok</li>
+                <li class="navigation" data-id="1">Dziennik</li>
+                <li class="navigation" data-id="2">Historia</li>
+                <li class="navigation" data-id="3">Ognisko</li>
+                <li class="navigation" data-id="4">Smok</li>
             </ul>
         </nav>
         
-        <section id="journal">
+        <section id="tab_1" class="tabs">
             <div class="mainWidth">
                 <div class="paper">
                     <h3>Data</h3>
@@ -27,7 +27,7 @@
             </div>
         </section>
         
-        <section id="story" class="hidden">
+        <section id="tab_2" class="tabs">
             <div class="mainWidth">
                 <div class="paper">
                     <p>Historia...</p>
@@ -35,7 +35,7 @@
             </div>
         </section>
         
-        <section id="heroes" class="hidden">
+        <section id="tab_3" class="tabs">
             <div class="mainWidth">
                 <div class="fireplace">
                     <div id="barbarian">
@@ -57,11 +57,12 @@
             </div>
         </section>
         
-        <section id="beast" class="hidden">
+        <section id="tab_4" class="tabs">
             <div class="mainWidth">
                 <div class="cave">
                     <div id="entrance">
-                        <div id="playerDead">Twój śmiałek poległ, czy chcesz podjąć wyzwanie jeszcze raz?</div>
+                        <div id="playerDead">Twój śmiałek poległ, czy chcesz wybrać innego wojownika, by dokończył walkę?</div>
+                        <div id="allDead">Wszyscy wojownicy polegli. Być może później będziesz mógł spotkać przy ognisku nowych śmiałków. Tymczasem zmęczony walką smok zasnął w swojej pieczarze i nie zagraża okolicznym krainom.</div>
                         <div id="callTheDragon">Zawołaj smoka</div>
                     </div>
                     <div id="dragon">

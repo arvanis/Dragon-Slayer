@@ -55,7 +55,6 @@ $(document).ready(function() {
             
             console.log ("rogue: " + str + " " + dex + " " + hp + " " + def);
         };
-        
     });
     
     
@@ -64,14 +63,14 @@ $(document).ready(function() {
         dragonHp = dragon.healthPoints,
         dragonBar = $("#dragonHpLeft");
         
-    
+    // Atak ze strony gracza
     
     attack.on("click", function() {  
         attack.hide();
         console.log("Attack function locked");
         setTimeout(attackUnlocked, 4000 - (40 * dex));
         function attackUnlocked() {
-            attack.show();
+            attack.fadeIn();
             console.log("Attack function unlocked");
         };
         
@@ -103,11 +102,11 @@ $(document).ready(function() {
     });
     
     
-    
+    // Atak ze strony smoka
     
     var call = $("#callTheDragon");
     call.on("click", function() {
-        if ( hp > 0 ) {
+        if ( hero.is(":checked") ) {
             var playerHp = hp,
                 playerInitialHp = hp,
                 playerBar = $("#playerHpLeft"),
@@ -137,7 +136,17 @@ $(document).ready(function() {
                             if ( playerHp <= 0 ) {
                                 console.log("Poległeś!");
                                 entrance.fadeIn();
-                                $("#playerDead").fadeIn();
+                                
+                                $("input[type=radio]:checked").parent().remove();
+                                hero.prop('checked', false);
+                                
+                                if ( hero == null ) {
+                                    call.hide();
+                                    $("#allDead").fadeIn();
+                                }
+                                else {
+                                    $("#playerDead").fadeIn();
+                                }
                             };
                         }
                         else {
@@ -161,4 +170,23 @@ $(document).ready(function() {
     
 
     
+    
+    
+    
+// Menu
+    
+    
+    var navButtons = $(".navigation");
+    $(".tabs").fadeOut();
+    $("#tab_1").fadeIn();
+    
+    navButtons.on("click", function() {
+        var i = $(this).data("id");
+        $(".tabs").fadeOut();
+        setTimeout(tabDisplay, 1000);
+        function tabDisplay() {
+            var tab = "#tab_" + i;
+            $(tab).fadeIn();
+        };
+    })
 });

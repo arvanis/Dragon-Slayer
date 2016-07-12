@@ -3,22 +3,30 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 675px;
 }
 
 #entrance {
     width: 100%;
-    height: 100%;
     z-index: 9999;
     @extend %flexibility;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     position: absolute;
 }
 
 #playerDead {
     display: none;
     width: 200px;
-    height: 10px;
+    height: 30px;
+    background-color: red;
+}
+
+#allDead {
+    display: none;
+    width: 500px;
+    height: 50px;
     background-color: red;
 }
 

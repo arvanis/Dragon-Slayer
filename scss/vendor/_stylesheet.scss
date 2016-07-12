@@ -1,40 +1,30 @@
-@font-face {
-    font-family: 'existencelight';
-    src: url('../fonts/Existence-Light-webfont.eot');
-    src: url('../fonts/Existence-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Existence-Light-webfont.woff') format('woff'),
-         url('../fonts/Existence-Light-webfont.ttf') format('truetype'),
-         url('../fonts/Existence-Light-webfont.svg#existencelight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 
 @font-face {
-  font-family: 'HelveticaNeueLTStd-Bd';
-  src: url('../fonts/HelveticaNeueLTStd-Bd.eot') format('embedded-opentype');
+  font-family: 'Almendra-Regular';
+  src: url('../fonts/Almendra-Regular.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeueLTStd-Bd';
-  src:  url('../fonts/HelveticaNeueLTStd-Bd.otf')  format('opentype'), url('.../fonts/HelveticaNeueLTStd-Bd.ttf')  format('truetype'), url('../fonts/HelveticaNeueLTStd-Bd.svg#HelveticaNeueLTStd-Bd') format('svg');
+  font-family: 'Almendra-Regular';
+  src:  url('../fonts/Almendra-Regular.otf')  format('opentype'),
+	    url('../fonts/Almendra-Regular.ttf')  format('truetype'), url('../fonts/Almendra-Regular.svg#Almendra-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Almendra-Bold';
+  src: url('../fonts/Almendra-Bold.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeueLTStd-Lt';
-  src: url('../fonts/HelveticaNeueLTStd-Lt.eot') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'HelveticaNeueLTStd-Lt';
-  src:  url('../fonts/HelveticaNeueLTStd-Lt.otf')  format('opentype'), url('../fonts/HelveticaNeueLTStd-Lt.ttf')  format('truetype'), url('../fonts/HelveticaNeueLTStd-Lt.svg#HelveticaNeueLTStd-Lt') format('svg');
+  font-family: 'Almendra-Bold';
+  src:  url('../fonts/Almendra-Bold.otf')  format('opentype'), url('../fonts/Almendra-Bold.ttf')  format('truetype'), url('../fonts/Almendra-Bold.svg#Almendra-Bold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
