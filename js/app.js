@@ -61,31 +61,103 @@ $(document).ready(function() {
     
 // Silnik walki
     var attack = $(".crosshair"),
-        dragonHp = dragon.healthPoints;
+        dragonHp = dragon.healthPoints,
+        dragonBar = $("#dragonHpLeft");
+        
     
-    attack.on("click", function() {                
+    
+    attack.on("click", function() {  
+        attack.hide();
+        console.log("Attack function locked");
+        setTimeout(attackUnlocked, 4000 - (40 * dex));
+        function attackUnlocked() {
+            attack.show();
+            console.log("Attack function unlocked");
+        };
+        
+                   
         var dexDuel = dex - dragon.dexterity,
             chanceBonus = (dexDuel/100) * $(this).data("chance"),
             hit = chanceBonus + $(this).data("chance");
         
         var luck = Math.random();
         
-        console.log (hit + " " + luck + " " + $(this).data("chance"));
+        console.log ("Próba uderzenia: " + hit + " przeciwko " + luck + " z szansą na trafienie: " + $(this).data("chance"));
         
         if ( hit > luck ) {
-            var damage = (str + (Math.floor(luck * 10)) - def) * $(this).data("points");
+            var damage = (str + (Math.floor(luck * 10)) - dragon.defence) * $(this).data("points");
             
-            dragonHp -= damage;    
-            console.log("Trafiłeś: " + damage + ". Smokowi zostało jeszcze: " + dragonHp + " punktów życia!");
+            if ( damage > 0 ) {
+                dragonHp -= damage;    
+                console.log("Trafiłeś: " + damage + ". Smokowi zostało jeszcze: " + dragonHp + " punktów życia!");
+            }
+            else {
+                console.log("Trafiłeś, ale nie zadałeś żadnych obrażeń!");
+            }
         }
         else {
             console.log("Nie trafiłeś");
         }
+        var HpValue = (100 * (dragonHp / 1000)) + "%";
+        dragonBar.width(HpValue);
+    });
+    
+    
+    
+    
+    var call = $("#callTheDragon");
+    call.on("click", function() {
+        if ( hp > 0 ) {
+            var playerHp = hp,
+                playerInitialHp = hp,
+                playerBar = $("#playerHpLeft"),
+                entrance = $("#entrance");
+            entrance.fadeOut();
+            console.log("Twoje aktualne zdrowie " + playerHp + " przy sile: " + str + " przeciwko sile smoka: " + dragon.strength);
+            var dragonFury = setInterval(dragonAttack, 10000);
+                
+            function dragonAttack() {
+                if ( (dragonHp > 0) && (playerHp > 0)) {
+                    var dexDuel = dragon.dexterity - dex,
+                    chanceBonus = (dexDuel/100) * 0.7,
+                    hit = chanceBonus + 0.7;
+                    
+                    var luck = Math.random();
+                    
+                    console.log ("Próba smoka: " + hit + " przeciwko Twojemu szczęsciu: " + luck);
+                    
+                    if ( hit > luck ) {
+                        var damage = Math.floor(dragon.strength * luck) - def;
+                        
+                        if ( damage > 0 ) {
+                            playerHp -= damage;    
+                            console.log("Smok trafił: " + damage + ". Zostało Ci jeszcze: " + playerHp + " punktów życia!");
+                            var HpValue = (100 * (playerHp / playerInitialHp)) + "%";
+                            playerBar.width(HpValue);
+                            if ( playerHp <= 0 ) {
+                                console.log("Poległeś!");
+                                entrance.fadeIn();
+                                $("#playerDead").fadeIn();
+                            };
+                        }
+                        else {
+                            console.log("Smok trafił, ale nie zadał Ci żadnych poważnych obrażeń!");
+                        }
+                    }
+                    else {
+                        console.log("Smok nie trafił!");
+                    }
+                }
+                else if ( (dragonHp <= 0) && (playerHp > 0) ) {
+                    clearInterval(dragonFury);
+                };
+            }
+        }
+        else {
+            console.log("Wybierz najpierw śmiałka");
+        }
         
     });
-
-    
-//    (Math.random() + 
     
 
     
