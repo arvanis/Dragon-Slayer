@@ -111,6 +111,7 @@ $(document).ready(function() {
                 playerInitialHp = hp,
                 playerBar = $("#playerHpLeft"),
                 entrance = $("#entrance");
+            playerBar.width("100%");
             entrance.fadeOut();
             console.log("Twoje aktualne zdrowie " + playerHp + " przy sile: " + str + " przeciwko sile smoka: " + dragon.strength);
             var dragonFury = setInterval(dragonAttack, 10000);
@@ -140,7 +141,11 @@ $(document).ready(function() {
                                 $("input[type=radio]:checked").parent().remove();
                                 hero.prop('checked', false);
                                 
-                                if ( hero == null ) {
+                                function isEmpty(el) {
+                                    return !$.trim(el.html())
+                                }
+                                
+                                if (isEmpty($('.fireplace'))) {
                                     call.hide();
                                     $("#allDead").fadeIn();
                                 }
@@ -177,7 +182,7 @@ $(document).ready(function() {
     
     
     var navButtons = $(".navigation");
-    $(".tabs").fadeOut();
+    $(".tabs").hide()
     $("#tab_1").fadeIn();
     
     navButtons.on("click", function() {
