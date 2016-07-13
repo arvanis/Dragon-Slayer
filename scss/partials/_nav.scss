@@ -1,4 +1,60 @@
 .navigation {
     cursor: pointer;
     display: inline-block;
+    color: $color3;
+    font-family: 'Almendra-Regular', sans-serif;    
+}
+
+//@media only screen and (max-width: $mobile) {
+//    
+//}
+//
+@media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
+    nav {
+        height: 50px;
+        background-color: $colorMenu;
+        
+        .mainWidth {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    nav ul {
+        font-size: 26px;     
+    }
+    
+    nav li {
+        padding: 12px 15px;
+        
+        &:hover {
+            background-color: lighten($colorMenu, 10%);
+        }
+    }
+}
+
+@media only screen and (min-width: $tablet + 1px) and (orientation: landscape) {
+    nav {
+        height: 50px;
+        background-color: $colorMenu;
+        
+        .mainWidth {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    nav ul {
+        font-size: 26px;     
+    }
+    
+    nav li {
+        padding: 12px 15px;
+        
+        &:hover {
+            background-color: lighten($colorMenu, 10%);
+        }
+    }
+    
 }
