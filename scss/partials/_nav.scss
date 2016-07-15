@@ -9,9 +9,9 @@
 //    
 //}
 //
-@media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
+@media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) and (orientation: landscape) {
     nav {
-        height: 50px;
+        height: 10vh;
         background-color: $colorMenu;
         
         .mainWidth {
@@ -22,11 +22,11 @@
     }
     
     nav ul {
-        font-size: 26px;     
+        font-size: 4vh;     
     }
     
     nav li {
-        padding: 12px 15px;
+        padding: 1vh 5vw;
         
         &:hover {
             background-color: lighten($colorMenu, 10%);
