@@ -1,165 +1,388 @@
-#entrance, .cave {
-    background-image: url("../images/cave_by_chriscold-d71hcxo.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 675px;
-}
+//@media only screen and (max-width: $mobile) {
+//    
+//}
+//
+//@media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
+//
+//}
 
-#entrance {
-    width: 100%;
-    z-index: 9999;
-    @extend %flexibility;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-}
+@media only screen and (min-width: $tablet + 1px) and (orientation: landscape) {
 
-#callTheDragon {
-    width: 100px;
-    height: 50px;
-    background-color: bisque;
-    color: black;
-    @extend %flexibility;
-    justify-content: center;
-    align-items: center;
-}
-
-#dragon {
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 1100px;
-    height: 600px;
-}
-
-#dbody, #dhead, #dhand, #dleftWing, #drightWing, .crosshair {
     
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: absolute;
-}
+    #fade {
+        background-color: rgba(0,0,0,0.5);
+        width:100%;
+        height: 100%;
+        position: absolute;
+    }
+    
+    
+    #entrance, .cave {
+        background-image: url("../images/cave_by_chriscold-d71hcxo.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 675px;
+        width: 100%;
+        border-radius: 10px;
 
-#dbody {
-    background-image: url("../images/dragonbody.png");
-    width: 550px * 2;
-    height: 300px * 2;
-    z-index: 2
-}
+    }
+    
+    #entrance {
+        z-index: 9999;
+        display: -webkit-box; 
+        display: -moz-box;
+        display: -ms-flexbox;  
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+    }
+    
+    #callTheDragon {
+        width: 300px;
+        height: 100px;
+        background-color: bisque;
+        color: black;
+        display: -webkit-box; 
+        display: -moz-box;
+        display: -ms-flexbox;  
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        border: 1px solid $colorMenu;
+        font-family: 'Almendra-Regular', sans-serif;
+        cursor: pointer;
+        font-size: 24px;
+    }
+    
+    #dragon {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 1100px;
+        height: 600px;
+    }
+    
+    #dbody, #dhead, #dhand, #dleftWing, #drightWing, .crosshair {
+        
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+    }
+    
+    #dbody {
+        background-image: url("../images/dragonbody.png");
+        width: 550px * 2;
+        height: 300px * 2;
+        z-index: 2
+    }
+    
+    #dhead {
+        background-image: url("../images/dragonhead.png"); 
+        width: 200px;
+        height: 290px;
+        left: 426px;
+        top: 215px;
+        z-index: 3
+    }
+    
+    #dhand {
+        background-image: url("../images/righthand.png");
+        width: 101px * 2;
+        height: 137px * 2;
+        left: 659px;
+        top: 205px;
+        z-index: 1;
+    }
+    
+    #dleftWing {
+        background-image: url("../images/leftwing.png"); 
+        width: 269px * 2;
+        height: 283px * 2;
+        left: 17px;
+        top: 19px;
+        z-index: 2
+    }
+    
+    #drightWing {
+        background-image: url("../images/rightwing.png");  
+        width: 276px * 2;
+        height: 263px * 2;
+        left: 532px;
+        top: 23px;
+        z-index: 0;
+    }
+    
+    .crosshair {
+        background-image: url("../images/18558.png"); 
+        width: 20px * 2;
+        height: 20px * 2;
+        opacity: 0.5;
+        cursor: pointer;
+        z-index: 9;
+    }
+    
+    .crosshair:hover {
+        opacity: 1;
+    }
+    
+    #dbody + .crosshair {
+        left: 612px;
+        top: 357px;
+    }
+    
+    #dhead + .crosshair {
+        left: 514px;
+        top: 320px;
+    }
+    
+    #dhand + .crosshair {
+        left: 400px;
+        top: 434px;
+    }
+    
+    #dleftWing + .crosshair {
+        left: 384px;
+        top: 215px;
+    
+    }
+    
+    #drightWing + .crosshair {
+        left: 790px;
+        top: 133px;
+    }
+    
+    #dragonHpBar, #playerHpBar {
+        height: 20px;
+        width: 216px;
+        position: absolute;
+    }
+    
+    .bar {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url("../images/bar.png");
+        width: 300px;
+        height: 200px;
+        position: absolute;
+    }
+    
+    .nameBack {
+        height: 20px;
+        width: 100%;
+        background-color: $color3;
+        -webkit-transform: skew(45deg);
+	    -moz-transform: skew(45deg);
+	    -o-transform: skew(45deg);
+    }
+    
+    .iconBack {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: absolute;
+        left: -57px;
+        top: -32px;
+        background-color: $color3;
+    }
+    
+    #dragonHpLeft, #playerHpLeft {
+        height: 20px;
+        background: rgba(109,0,25,1);
+        background: -moz-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(109,0,25,1)), color-stop(45%, rgba(143,2,34,1)), color-stop(100%, rgba(238,17,17,1)));
+        background: -webkit-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
+        background: -o-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
+        background: -ms-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
+        background: linear-gradient(to right, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d0019', endColorstr='#ee1111', GradientType=1 );
+        position: absolute;
+        -webkit-transform: skew(135deg);
+	    -moz-transform: skew(135deg);
+	    -o-transform: skew(135deg);
+    }
+    
+    #playerHpBar {
+        left: 100px;
+        margin: 0 auto;
+        bottom: 30px;
+        
+        .bar {
+            top: -102px;
+            left: -67px;
+        }
+        
+        .nameBack {
+            top: -23px;
+            position: absolute;
+        }
+        
+        #playerHpLeft {
+            left: 0;
+        }
+    }
+    
+    #dragonHpBar {
+        left: 45px;
+        margin: 0 auto;
+        top: 60px;
+        
+        .bar {
+            top: -102px;
+            left: -67px;
+        }
+        .nameBack {
+            top: -23px;
+            position: absolute;
+        }
+        
+        #dragonHpLeft {
+            left: 0;
+        }
+    }
+   
+    #dragonName, #name {
+        font-family: 'Almendra-Regular', sans-serif;
+        position: absolute;
+        color: black;
+        top: -21px;
+        left: 14px;
+        font-size: 16px;
+    }
 
-#dhead {
-    background-image: url("../images/dragonhead.png"); 
-    width: 200px;
-    height: 290px;
-    left: 426px;
-    top: 215px;
-    z-index: 3
-}
+    #dragonIcon, #barbIcon, #knightIcon, #rogIcon {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: -52px;
+        top: -23px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    
+    #dragonIcon {
+        background-image: url("../images/dragonhead.png");
+    }
+    
+    #barbIcon {
+        background-image: url("../images/barbface.png");
+    }
+    
+    #knightIcon {
+        background-image: url("../images/knightface.png");
+    }
+    
+    #rogIcon {
+        background-image: url("../images/rogface.png");
+    }
+    
+    #dodge, #shield {
+        display: none;
+    //    display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    
+    #dodge {
+        background-image: url("../images/running-icon.png");   
+    }
+    
+    #shield {
+        background-image: url("../images/shield-icon.png");   
+    }
+    
+    .playerSuccess {
+        color: green;
+    }
+    
+    .dragonSuccess {
+        color: red;
+    }
+    
+    .handUp {
+        animation: attacking 1s 2 alternate;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes attacking {
+    0% {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -ms-transform-origin: 1% 13%; /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        -webkit-transform-origin: 1% 13%; /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        transform-origin: 1% 13%;
+        }
+    100% {        
+        -ms-transform: rotate(-45deg); /* IE 9 */
+        -ms-transform-origin: 1% 13%; /* IE 9 */
+        -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+        -webkit-transform-origin: 1% 13%; /* Chrome, Safari, Opera */
+        transform: rotate(-45deg);
+        transform-origin: 1% 13%; 
+        }
+    }
+    
+    .rightUp {
+        animation: flyR 1s 2 alternate;
+        animation-fill-mode: forwards;
+    }
 
-#dhand {
-    background-image: url("../images/righthand.png");
-    width: 101px * 2;
-    height: 137px * 2;
-    left: 659px;
-    top: 205px;
-    z-index: 1;
-}
-
-#dleftWing {
-    background-image: url("../images/leftwing.png"); 
-    width: 269px * 2;
-    height: 283px * 2;
-    left: 17px;
-    top: 19px;
-    z-index: 2
-}
-
-#drightWing {
-    background-image: url("../images/rightwing.png");  
-    width: 276px * 2;
-    height: 263px * 2;
-    left: 532px;
-    top: 23px;
-    z-index: 0;
-}
-
-.crosshair {
-    background-image: url("../images/18558.png"); 
-    width: 20px * 2;
-    height: 20px * 2;
-    opacity: 0.5;
-    cursor: pointer;
-    z-index: 9;
-}
-
-.crosshair:hover {
-    opacity: 1;
-}
-
-#dbody + .crosshair {
-    left: 612px;
-    top: 357px;
-}
-
-#dhead + .crosshair {
-    left: 514px;
-    top: 320px;
-}
-
-#dhand + .crosshair {
-    left: 400px;
-    top: 434px;
-}
-
-#dleftWing + .crosshair {
-    left: 384px;
-    top: 215px;
-
-}
-
-#drightWing + .crosshair {
-    left: 790px;
-    top: 133px;
-}
-
-#dragonHpBar, #playerHpBar {
-    height: 20px;
-    width: 200px;
-    border: 1px solid black;
-    background-color: #DDD;
-}
-
-#dragonHpLeft, #playerHpLeft {
-    height: 20px;
-    background: rgba(109,0,25,1);
-    background: -moz-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(109,0,25,1)), color-stop(45%, rgba(143,2,34,1)), color-stop(100%, rgba(238,17,17,1)));
-    background: -webkit-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
-    background: -o-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
-    background: -ms-linear-gradient(left, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
-    background: linear-gradient(to right, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 45%, rgba(238,17,17,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d0019', endColorstr='#ee1111', GradientType=1 );
-}
-
-#dodge, #shield {
-    display: none;
-//    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-#dodge {
-    background-image: url("../images/running-icon.png");   
-}
-
-#shield {
-    background-image: url("../images/shield-icon.png");   
+    .leftUp {
+        animation: flyL 1s 2 alternate;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes flyR {
+    0% {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -ms-transform-origin: 20% 40%; /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        -webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        transform-origin: 20% 40%;
+        }
+    100% {        
+        -ms-transform: rotate(5deg); /* IE 9 */
+        -ms-transform-origin: 20% 40%; /* IE 9 */
+        -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
+        -webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */
+        transform: rotate(5deg);
+        transform-origin: 20% 40%;
+        }
+    }
+        
+    @keyframes flyL {
+    0% {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -ms-transform-origin:  79% 41%; /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        -webkit-transform-origin:  79% 41%; /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        transform-origin:  79% 41%;
+        }
+    100% {        
+        -ms-transform: rotate(-5deg); /* IE 9 */
+        -ms-transform-origin:  79% 41%; /* IE 9 */
+        -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+        -webkit-transform-origin:  79% 41%; /* Chrome, Safari, Opera */
+        transform: rotate(-5deg);
+        transform-origin: 79% 41%; 
+        }
+    }
+    
 }

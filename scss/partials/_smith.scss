@@ -1,0 +1,112 @@
+//@media only screen and (max-width: $mobile) {
+//    
+//}
+//
+//@media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
+//
+//}
+
+@media only screen and (min-width: $tablet + 1px) and (orientation: landscape) {
+    
+    #tab_5 .paper {
+        overflow: visible;
+    }
+    
+    #list1, #list2 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 600px;
+        height: 240px;
+        margin: 0 auto;
+        border: 1px solid $colorMenu;
+        background-color: $color2;
+        display: -webkit-box; 
+        display: -moz-box;
+        display: -ms-flexbox;  
+        display: -webkit-flex; 
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    
+    .slot {
+        width: 100px;
+        height: 120px;
+        position: relative;
+        box-sizing: border-box;
+        border: 1px solid $color1;
+            
+        a {
+            font-size: 16px;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            margin: 0 auto;
+            background-color: rgba(0,0,0,0.25);
+            cursor: pointer;
+        }
+        
+        img {
+            width: 98px;
+            height: 98px;
+        }
+    }
+    
+    #list1 {
+        top: 40px;
+    }
+    
+    #list2 {
+        top: 300px;
+    }
+    
+    .shield {
+        background-color: bisque;
+    }
+    
+    .sword {
+        background-color: burlywood;
+    }
+    
+    .ruby {
+        background-color: aliceblue;
+    }
+    
+    .armor {
+        background-color: rosybrown;
+    }
+    
+    .description {
+        display: none;
+        width: 300px;
+        color: black;
+        background-color: $color3;
+        font-size: 18px;
+        border: 1px solid black; 
+        z-index: 99;
+        padding: 15px 10px;
+        position: absolute;
+        
+        p {
+            font-weight: bold;
+        }
+    }
+    
+    
+    #playerPocket {
+        font-family: 'Almendra-Regular', sans-serif;
+        font-size: 30px;
+        color: $colorMenu;
+        position: absolute;
+        bottom: 12px;
+        left: 25px;
+        
+        #money {
+            font-size: 40px;
+            font-weight: bold;
+            color: black;
+        }   
+    }
+}

@@ -38,6 +38,7 @@
             overflow-y: auto;
             margin-top: 20px;
             font-family: 'Almendra-Regular', sans-serif; 
+            position: relative;
         }
     }
     
@@ -55,6 +56,12 @@
             font-size: 26px;
             line-height: 50px;
             text-align: justify;
+        }
+    }
+    
+    #tab_2 {
+        p:first-letter {
+            font-size: 50px;
         }
     }
     
@@ -87,6 +94,15 @@
             margin: 0 auto;
         }
         
+        #moon {
+            width: 400px;
+            position: absolute;
+            left: 280px;
+            right: 0;
+            top: -18px;
+            margin: 0 auto;
+        }
+        
         #tree1 {
             width: 400px;
             position: absolute;
@@ -97,9 +113,10 @@
         #tree2 {
             width: 400px;
             position: absolute;
-            left: 392px;
-            top: -79px;
+            right: 342px;
+            top: -120px;
             margin: 0 auto;
+            transform: rotate(-307deg);
         }
         
         #tree3 {
@@ -121,8 +138,7 @@
             width: 500px;
             position: absolute;
             right: -186px;
-            bottom: -137px;
-            z-index: 1;
+            bottom: -137px;;
         }
         
         #tree6 {
@@ -130,6 +146,7 @@
             position: absolute;
             right: -9px;
             bottom: -194px;
+            z-index: 1;
         }
         
         #tree7 {

@@ -5,24 +5,42 @@
     display: inline-block;
     position: absolute;
     
-    &:hover {
-        background-color: rgba(255,250,102,0.5);
+    .shadow {
+        width: 250px;
+        height: 350px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
 
 #rogue {
     top: 200px;
     right: 136px;
+    
+    .shadow {
+        background-image: url("../images/rogshadow.png");
+    }
 }
 
 #knight {
     top: 200px;
     left: 301px;
+    .shadow {
+        background-image: url("../images/knightshadow.png");
+    }
 }
 
 #barbarian {
     top: 200px;
-    left: 97px
+    left: 97px;
+    .shadow {
+        background-image: url("../images/barbshadow.png");
+    }
 }
 
 
@@ -58,6 +76,14 @@
 }
 
 
-#tab_3 input[type=radio]:checked + label {
-    background-color: rgba(255,250,102,0.5);
+#barbarian input[type=radio]:checked + label {
+    background-image: url("../images/barbgo.png");
+}
+
+#knight input[type=radio]:checked + label {
+    background-image: url("../images/knightgo.png");
+}
+
+#rogue input[type=radio]:checked + label {
+    background-image: url("../images/roggo.png");
 }
