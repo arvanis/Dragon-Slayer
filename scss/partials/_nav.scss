@@ -22,11 +22,18 @@
     }
     
     nav ul {
-        font-size: 4vh;     
+        font-size: 5vh;  
+        display: -webkit-box; 
+        display: -moz-box;
+        display: -ms-flexbox;  
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
     }
     
     nav li {
-        padding: 1vh 5vw;
+        padding: 2vh 0;
         
         &:hover {
             background-color: lighten($colorMenu, 10%);

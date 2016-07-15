@@ -501,20 +501,33 @@ var msg = $("#message");
         $("#fade").fadeOut();
         
         var x = window.innerWidth,
-            y = window.innerHeight,
-            mapX = 3264,
-            pos3 = ((-mapX + x)/2) + "px",
-            pos4 = (-mapX + x) + "px",
-            pos5 = ((-mapX + x)/2) + "px";
+            y = window.innerHeight;
         
-        console.log(x, pos3, pos4, pos5);
+        if ( x > 1200 ) {
+            var mapX = 3264,
+                posY2 = "-1450px",
+                posY3 = "-650px",
+                posY4 = "-430px";
+        }
+        else if ( ( x <= 1200 ) && ( x > 630 ) ) {
+            var mapX = 2.25 * x,
+                posY2 = "-93vw",
+                posY3 = "-47vw",
+                posY4 = "-15vw";
+        }
+            
+        var posX3 = ((-mapX + x)/2) + "px",
+            posX4 = (-mapX + x) + "px",
+            posX5 = ((-mapX + x)/2) + "px";
+        
+        console.log(x, posX3, posX4, posX5);
             
         var tabBckr = [
             ["0", "0"], 
-            ["0", "-1450px"], 
-            [ pos3, "-650px"], 
-            [ pos4, "-430px"], 
-            [ pos5,"0"]
+            ["0", posY2], 
+            [ posX3, posY3], 
+            [ posX4, posY4], 
+            [ posX5,"0"]
         ];
             
 
