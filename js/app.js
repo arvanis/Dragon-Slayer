@@ -15,8 +15,8 @@ var msg = $("#message");
     
     // Postacie
     
-    var barbarian = new character(50, 25, 25, 0),
-        knight = new character(35, 25, 40, 5),
+    var barbarian = new character(50, 35, 25, 0),
+        knight = new character(35, 35, 40, 5),
         rogue = new character(25, 50, 25, 3),
         dragon = new character(100, 40, 100, 10);
     
@@ -292,7 +292,7 @@ var msg = $("#message");
             
 // Częstotliwość wyświetlania celowników w zależności od zręczności gracza
             
-            var spots = setInterval(attackUnlocked, 3000 - (20 * dex));
+            var spots = setInterval(attackUnlocked, 2500 - (20 * dex));
             function attackUnlocked() {  
                 
                 
@@ -335,7 +335,7 @@ var msg = $("#message");
             
 // Ataki smoka - co 10 sekund
             
-            var dragonFury = setInterval(dragonAttack, 10000);
+            var dragonFury = setInterval(dragonAttack, 5000);
                 
             function dragonAttack() {
                 if ( (dragonHp > 0) && (playerHp > 0)) {
@@ -494,21 +494,58 @@ var msg = $("#message");
     $("#fade").hide();
     $("#tab_1").fadeIn();
     
-    var tabBckr_1 = "-100px",
-        tabBckr_2 = "-200px",
-        tabBckr_3 = "-500px",
-        tabBckr_4 = "-300px",
-        tabBckr_5 = "-150px";
+//    var tabBckr = [
+//        ["0", "0"], 
+//        ["0", "-1450px"], 
+//        ["-840px", "-650px"], 
+//        ["-1360px", "-500px"], 
+//        ["-900px","0"]
+//    ];
+    
+//    var tabBckr = [
+//        ["0", "0", "", ""], 
+//        ["0", "0"], 
+//        ["0", "0", "0", "0"], 
+//        ["-500px", "0"], 
+//        ["0", "0", "0"]
+//    ];
+    
+        
  
     
     navButtons.on("click", function() {
         var i = $(this).data("id");
         $(".tabs").fadeOut();
         $("#fade").fadeOut();
+        
+        var x = window.innerWidth,
+            y = window.innerHeight,
+            mapX = 3264,
+            pos3 = ((-mapX + x)/2) + "px",
+            pos4 = (-mapX + x) + "px",
+            pos5 = ((-mapX + x)/2) + "px";
+        
+        console.log(x, pos3, pos4, pos5);
+            
+        var tabBckr = [
+            ["0", "0"], 
+            ["0", "-1450px"], 
+            [ pos3, "-650px"], 
+            [ pos4, "-430px"], 
+            [ pos5,"0"]
+        ];
+            
+
+        
+        
         $("body").animate({
-            backgroundPositionX: tabBckr_1,
-            backgroundPositionY: tabBckr_4});
-        setTimeout(tabDisplay, 1000);
+            backgroundPositionX: tabBckr[i-1][0],
+            backgroundPositionY: tabBckr[i-1][1],           
+//            backgroundPosition: "-100px -100px"
+                },
+                         2000);
+
+        setTimeout(tabDisplay, 2000);
         function tabDisplay() {
             var tab = "#tab_" + i;
             $(tab).fadeIn();

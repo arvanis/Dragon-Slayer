@@ -9,66 +9,22 @@
 @media only screen and (min-width: $tablet + 1px) and (orientation: landscape) {
 
     body {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }    
+    
+//    #bodyBckgrnd {
+//        background: url("../images/background/mapa.JPG") 0 0 no-repeat;
+//        width: 3264px;
+//        height: 2448px;
+//        position: absolute;
+//        margin: auto;
+//    }
+//    
+    
+    body {
         background: url("../images/background/mapa.JPG") 0 0 no-repeat;
     }
-    
-//    .tab1 {
-//        animation: tab1 1s alternate;
-//        -webkit-animation-fill-mode: forwards;
-//        animation-fill-mode: forwards;
-//        
-//        @keyframes tab1 {
-//            100% {
-//                background-position: 0 -321px;
-//            }
-//        }
-//    }
-//    
-//    .tab2 {
-//        animation: tab2 1s 1 alternate;
-//        -webkit-animation-fill-mode: forwards;
-//        animation-fill-mode: forwards;
-//        
-//        @keyframes tab2 {
-//            100% {
-//                background-position: 0 -321px;
-//            }
-//        }
-//    }
-//    
-//    .tab3 {
-//        animation: tab3 1s 1 alternate;
-//        -webkit-animation-fill-mode: forwards;
-//        animation-fill-mode: forwards;
-//        
-//        @keyframes tab3 {
-//            100% {
-//                background-position: -300px -321px;
-//            }
-//        }
-//    }
-//    
-//    .tab4 {
-//        animation: tab4 1s 1 alternate;
-//        
-//        @keyframes tab4 {
-//            100% {
-//                background-position: 0 -321px;
-//            }
-//        }
-//    }
-//    
-//    .tab5 {
-//        animation: tab5 1s 1 alternate;
-//        -webkit-animation-fill-mode: forwards;
-//        animation-fill-mode: forwards;
-//        
-//        @keyframes tab5 {
-//            100% {
-//                background-position: 0 -321px;
-//            }
-//        }
-//    }
-    
-    
 }
