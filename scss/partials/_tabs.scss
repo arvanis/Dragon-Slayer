@@ -1,9 +1,84 @@
+.content {
+    display: -webkit-box; 
+    display: -moz-box;
+    display: -ms-flexbox;  
+    display: -webkit-flex; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
 //@media only screen and (max-width: $mobile) {
 //    
 //}
 //
 @media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
-
+    #tab_1, #tab_2, #tab_5 {
+        width: 100%;
+        
+        .mainWidth {
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        .paper {
+            width: 800px;
+            background-color: rgba(210, 159, 76, 0.85);
+            color: $text;
+            border: 1px solid $colorMenu;
+            border-radius: 5px;
+            padding: 15px;
+           
+            overflow: hidden;
+            margin-top: 20px;
+            font-family: 'Almendra-Regular', sans-serif; 
+            position: relative;
+        }
+    }
+    
+    #tab_5 {
+        .paper {
+             height: 600px;
+        }
+    }
+    
+    #tab_1, #tab_2 {
+        
+        .paper {
+            height: 40vw;
+        }
+        
+        h3 {
+            font-size: 16px;
+            align-self: flex-end;
+            margin: 10px;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        p {
+            font-size: 26px;
+            line-height: 50px;
+            text-align: justify;
+            margin-right: 10px;
+        }
+    }
+    
+    #tab_2 {
+        p:first-letter {
+            font-size: 50px;
+        }
+    }
+    
+    #tab_5 {
+        .paper {
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+        }
+    }
 }
 
 @media only screen and (min-width: $tablet + 1px) and (orientation: landscape) {
@@ -20,34 +95,35 @@
         }
         
         .paper {
-            height: 40vw;
             width: 800px;
             background-color: rgba(210, 159, 76, 0.85);
             color: $text;
-            display: -webkit-box; 
-            display: -moz-box;
-            display: -ms-flexbox;  
-            display: -webkit-flex; 
-            display: flex;
             border: 1px solid $colorMenu;
             border-radius: 5px;
             padding: 15px;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: baseline;
-            overflow-y: auto;
+            overflow: hidden;
             margin-top: 20px;
             font-family: 'Almendra-Regular', sans-serif; 
             position: relative;
         }
     }
     
+    #tab_5 {
+        .paper {
+             height: 600px;
+        }
+    }
+    
     #tab_1, #tab_2 {
+        
+        .paper {
+            height: 40vw;
+        }
         
         h3 {
             font-size: 16px;
             align-self: flex-end;
-            margin: 10px 0;
+            margin: 10px;
             font-weight: bold;
             font-style: italic;
         }
