@@ -1,89 +1,195 @@
-#barbarian, #knight, #rogue {
-    width: 250px;
-    height: 350px;
-    margin: 30px;
-    display: inline-block;
-    position: absolute;
+//@media only screen and (max-width: $mobile) {
+//    
+//}
+//
+@media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
     
-    .shadow {
-        width: 250px;
-        height: 350px;
+    #barbarian, #knight, #rogue {
+        height: 18vh;
+        width: 50vw;
         position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0.5;
+        left: 5vw;
+        display: -webkit-box; 
+        display: -moz-box;
+        display: -ms-flexbox;  
+        display: -webkit-flex; 
+        display: flex;
+        justify-content: center;
+        
+        .shadow {
+            width: 50vw;
+            height: 18vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .face {
+            position: absolute;
+            top: 4vh;
+            left: 2vw;
+            height: 10vh;
+        }
+        p {
+            font-family: 'Almendra-Regular', sans-serif;
+            text-align: center;
+            font-size: 8vh;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 6vh;
+            color: $color3;
+        }
+    }
+    
+    #rogue {
+        top: 53vh;
+    }
+    
+    #knight {
+        top: 31vh;
+    }
+    
+    #barbarian {
+        top: 9vh;
+    }
+    
+    
+    
+    
+    // Wybór bohatera - checkbox
+    
+    #tab_3 input[type=radio] {
+        display:none;
+    }
+     
+    #tab_3 input[type=radio] + label {
+        display:inline-block;
+        padding: 0 0 0 0px;
         background-position: center center;
         background-size: contain;
         background-repeat: no-repeat;
+        height: 18vh;
+        width: 60.2vh;
+        cursor: pointer;
+        background-image: url("../images/deska2.png");
+        position: relative;
+        
+        .chosen {
+            display: none;
+        }
     }
-}
 
-#rogue {
-    top: 200px;
-    right: 136px;
     
-    .shadow {
-        background-image: url("../images/rogshadow.png");
+    #tab_3 input[type=radio]:checked + label {
+        background-image: url("../images/deska2light.png");
+        
+        .chosen {
+            display: inline-block;
+            position: absolute;
+            top: 6vh;
+            left: -6vw;
+            height: 9vh;
+        }
     }
+
+
 }
 
-#knight {
-    top: 200px;
-    left: 301px;
-    .shadow {
-        background-image: url("../images/knightshadow.png");
+@media only screen and (min-width: $tablet + 1px) and (orientation: landscape) {
+    
+    #barbarian, #knight, #rogue {
+        width: 250px;
+        height: 350px;
+        margin: 30px;
+        display: inline-block;
+        position: absolute;
+        
+        .shadow {
+            width: 250px;
+            height: 350px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.5;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        p, img {
+            display: none;
+        }
     }
-}
-
-#barbarian {
-    top: 200px;
-    left: 97px;
-    .shadow {
-        background-image: url("../images/barbshadow.png");
+    
+    #rogue {
+        top: 200px;
+        right: 136px;
+        
+        .shadow {
+            background-image: url("../images/rogshadow.png");
+        }
     }
-}
-
-
-
-
-// Wybór bohatera - checkbox
-
-#tab_3 input[type=radio] {
-    display:none;
-}
- 
-#tab_3 input[type=radio] + label {
-    display:inline-block;
-    padding: 0 0 0 0px;
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 350px;
-    width: 250px;
-    cursor: pointer;
-}
-
-#barbarian input[type=radio] + label {
-    background-image: url("../images/barb.png");
-}
-
-#knight input[type=radio] + label {
-    background-image: url("../images/knight.png");
-}
-
-#rogue input[type=radio] + label {
-    background-image: url("../images/pnp_rogue.png");
-}
-
-
-#barbarian input[type=radio]:checked + label {
-    background-image: url("../images/barbgo.png");
-}
-
-#knight input[type=radio]:checked + label {
-    background-image: url("../images/knightgo.png");
-}
-
-#rogue input[type=radio]:checked + label {
-    background-image: url("../images/roggo.png");
+    
+    #knight {
+        top: 200px;
+        left: 301px;
+        .shadow {
+            background-image: url("../images/knightshadow.png");
+        }
+    }
+    
+    #barbarian {
+        top: 200px;
+        left: 97px;
+        .shadow {
+            background-image: url("../images/barbshadow.png");
+        }
+    }
+    
+    
+    
+    
+    // Wybór bohatera - checkbox
+    
+    #tab_3 input[type=radio] {
+        display:none;
+    }
+     
+    #tab_3 input[type=radio] + label {
+        display:inline-block;
+        padding: 0 0 0 0px;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 350px;
+        width: 250px;
+        cursor: pointer;
+    }
+    
+    #barbarian input[type=radio] + label {
+        background-image: url("../images/barb.png");
+    }
+    
+    #knight input[type=radio] + label {
+        background-image: url("../images/knight.png");
+    }
+    
+    #rogue input[type=radio] + label {
+        background-image: url("../images/pnp_rogue.png");
+    }
+    
+    
+    #barbarian input[type=radio]:checked + label {
+        background-image: url("../images/barbgo.png");
+    }
+    
+    #knight input[type=radio]:checked + label {
+        background-image: url("../images/knightgo.png");
+    }
+    
+    #rogue input[type=radio]:checked + label {
+        background-image: url("../images/roggo.png");
+    }
 }

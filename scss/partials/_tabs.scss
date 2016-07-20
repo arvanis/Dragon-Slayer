@@ -59,8 +59,8 @@
         }
         
         p {
-            font-size: 26px;
-            line-height: 50px;
+            font-size: 24px;
+            line-height: 34px;
             text-align: justify;
             margin-right: 10px;
         }
@@ -68,7 +68,7 @@
     
     #tab_2 {
         p:first-letter {
-            font-size: 50px;
+            font-size: 36px;
         }
     }
     
@@ -76,8 +76,53 @@
         .paper {
             justify-content: center;
             align-items: center;
-            font-size: 36px;
+            font-size: 26px;
         }
+    }
+    
+    // Ognisko
+    
+    .background {
+        background-color: black;
+        height: 70vh;
+        width: 100%;
+        border: 1px solid $colorMenu;
+        border-radius: 9px;
+        overflow: hidden;
+        margin-top: 5vh;
+        position: relative;
+        
+        #fire {
+            width: 30vw;
+            position: absolute;
+            right: 0;
+            bottom: 10vh;
+        }
+        
+        #moon {
+            width: 30vw;
+            position: absolute;
+            right: 10vw;
+            top: 0;
+        }
+        
+        #tree1, #tree3, #tree4, #tree5, #tree6, #tree7  {
+            display: none;
+        }
+        
+        #tree2 {
+            width: 30vw;
+            position: absolute;
+            right: 12vw;
+            top: -7vh;
+            transform: rotate(-307deg);
+        }
+    }
+    
+    .fireplace {
+        left: 0;
+        position: absolute;
+        width: 100%;
     }
 }
 
@@ -166,7 +211,7 @@
             width: 400px;
             position: absolute;
             right: 0;
-            left: 160px;;
+            left: 160px;
             top: 350px;
             margin: 0 auto;
         }
