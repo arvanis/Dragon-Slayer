@@ -24,15 +24,15 @@
         
         
         .paper {
-            width: 800px;
+            width: 80vw;
             background-color: rgba(210, 159, 76, 0.85);
             color: $text;
             border: 1px solid $colorMenu;
             border-radius: 5px;
-            padding: 15px;
+            padding: 1vw;
            
             overflow: hidden;
-            margin-top: 20px;
+            margin-top: 1vw;
             font-family: 'Almendra-Regular', sans-serif; 
             position: relative;
         }
@@ -40,14 +40,14 @@
     
     #tab_5 {
         .paper {
-             height: 600px;
+             height: 70vh;
         }
     }
     
     #tab_1, #tab_2 {
         
         .paper {
-            height: 40vw;
+            height: 70vh;
         }
         
         h3 {
