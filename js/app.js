@@ -556,7 +556,7 @@ var msg = $("#message");
     
 // Kuźnia 
    
-    var buttons = $(".moveBtn"),
+    var eq = $(".slot"),
         list1 = $("#list1"),
         list2 = $("#list2"),
         msgSmith = $("#messageSmith");;
@@ -566,42 +566,42 @@ var msg = $("#message");
 
     var gold = 1500,
         pocket = $("#money");
-    buttons.on("click", function(event) {
+    eq.on("click", function(event) {
         
 // Kupno
         
-        if ( $(this).parent().parent().prop("id") == "list1" ) {
-            var dataType = $(this).parent().data("type");
+        if ( $(this).parent().prop("id") == "list1" ) {
+            var dataType = $(this).data("type");
            
             // Ograniczenie do możliwości zakupu tylko jednego egzemplarza danego rodzaju ekwipunku
             
             if ( $("#list2 ." + dataType).length == 1 ) {
                 msgSmith.prepend("<p>Nie możesz jednocześnie posiadać dwóch przedmiotów tego samego rodzaju. Pomyśl o innych klientach!</p>");
             }
-            else if ( gold < $(this).parent().data("price") ) {
+            else if ( gold < $(this).data("price") ) {
                 msgSmith.prepend("<p>Masz za mało złota, żeby zapłacić za ten przedmiot.</p>");
             }
             else {
-                list2.append($(this).parent());
-                gold -= $(this).parent().data("price");
-                $(this).text("Sprzedaj"); 
+                list2.append($(this));
+                gold -= $(this).data("price");
+                $(this).children(".moveBtn").text("Sprzedaj"); 
                 pocket.text(gold);
             };
         }
         
 // Sprzedaż
         
-        else if ( $(this).parent().parent().prop("id") == "list2" ) {
+        else if ( $(this).parent().prop("id") == "list2" ) {
             
             // Blokada sprzedaży przedmiotu o id="item_6" ze względu na klątwę
             
-            if ( $(this).parent().prop("id") == "item_6" ) {
+            if ( $(this).prop("id") == "item_6" ) {
                 msgSmith.prepend("<p>Mam nadzieję, że to nie popsuje naszych relacji i pozostaniesz moim klientem, ale wolałbym żebyś zatrzymał ten amulet u siebie.</p>");
             }
             else {
-                list1.append($(this).parent());
-                gold += $(this).parent().data("price");
-                $(this).text("Kup");
+                list1.append($(this));
+                gold += $(this).data("price");
+                $(this).children(".moveBtn").text("Kup");
                 pocket.text(gold);
             };
         };
