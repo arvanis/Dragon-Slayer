@@ -4,15 +4,15 @@
 //
 @media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
     #tab_5 .paper {
-        overflow: visible;
+        overflow: hidden;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
     }
     
     #list1, #list2 {
-        position: absolute;
-        left: 0;
-        right: 0;
-        width: 600px;
-        height: 240px;
+        width: 38vw;
+        height: 67vh;
         margin: 0 auto;
         border: 1px solid $colorMenu;
         background-color: $color2;
@@ -20,20 +20,21 @@
         display: -moz-box;
         display: -ms-flexbox;  
         display: -webkit-flex; 
-        display: flex;
+        display: inline-flex;
         flex-wrap: wrap;
         text-align: center;
+        overflow: hidden;
     }
     
     .slot {
-        width: 100px;
-        height: 120px;
+        width: 95%;
+        height: 25vh;
         position: relative;
         box-sizing: border-box;
         border: 1px solid $color1;
             
         a {
-            font-size: 16px;
+            font-size: 4vh;
             bottom: 0;
             left: 0;
             position: absolute;
@@ -44,17 +45,8 @@
         }
         
         img {
-            width: 98px;
-            height: 98px;
+            display: none;
         }
-    }
-    
-    #list1 {
-        top: 40px;
-    }
-    
-    #list2 {
-        top: 300px;
     }
     
     .shield {
@@ -74,15 +66,10 @@
     }
     
     .description {
-        display: none;
-        width: 300px;
+        display: inline-block;
         color: black;
-        background-color: $color3;
-        font-size: 18px;
-        border: 1px solid black; 
-        z-index: 99;
-        padding: 15px 10px;
-        position: absolute;
+        font-size: 3vh;
+        margin-top: 0.5vh;
         
         p {
             font-weight: bold;
