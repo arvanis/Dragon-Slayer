@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
-var msg = $("#message");
+var msg = $("#message .content");
+    
+// Scrollbar
+    
+    $('.container').perfectScrollbar();
     
 // Postacie i ekwipunek
     
@@ -216,20 +220,25 @@ var msg = $("#message");
                 
                 if ( damage <= 20 ) {
                     msg.prepend($("<p class=playerSuccess>Bohater trafił, ale smok prawie tego nie poczuł.</p>"));
+                    $("#message").perfectScrollbar('update');
                 }
                 else if ( (damage > 20) && (damage <= 50) ) {
                     msg.prepend($("<p class=playerSuccess>Bohater wykonał niezły cios!</p>"));
+                    $("#message").perfectScrollbar('update');
                 }
                 else if ( (damage > 50) && (damage <= 100) ) {
                     msg.prepend($("<p class=playerSuccess>To musiało smoka zaboleć! Potężne trafienie Twojego bohatera!</p>"));
+                    $("#message").perfectScrollbar('update');
                 }
                 else if ( damage > 100 ) {
                     msg.prepend($("<p class=playerSuccess>Niesamowity atak Twojego bohatera!</p>"));
+                    $("#message").perfectScrollbar('update');
                 };
             }
             else {
                 console.log("Twój bohater trafił, ale nie zadał żadnych obrażeń!");
                 msg.prepend($("<p>Twój bohater trafił, ale nie zadał żadnych obrażeń!</p>"));
+                $("#message").perfectScrollbar('update');
             };
             
             
@@ -239,11 +248,13 @@ var msg = $("#message");
                 $("#dragon").fadeOut();
                 attack.remove();
                 msg.prepend($("<p>Twój bohater zabił smoka!</p>"));
+                $("#message").perfectScrollbar('update');
             }
         }
         else {
             console.log("Nie trafiłeś");
             msg.prepend($("<p>Twój bohater nie trafił!</p>"));
+            $("#message").perfectScrollbar('update');
         };
         
 // Animacja paska zdrowia smoka
@@ -386,15 +397,19 @@ var msg = $("#message");
                             
                             if ( damage <= 20 ) {
                                 msg.prepend($("<p class=dragonSuccess>Uderzenie smoka ledwo dosięgło Twojego bohatera, ale zadało mu trochę obrażeń.</p>"));
+                                $("#message").perfectScrollbar('update');
                             }
                             else if ( (damage > 20) && (damage <= 50) ) {
                                 msg.prepend($("<p class=dragonSuccess>Twój bohater otrzymał mocne uderzenie.</p>"));
+                                $("#message").perfectScrollbar('update');
                             }
                             else if ( (damage > 50) && (damage <= 100) ) {
                                 msg.prepend($("<p class=dragonSuccess>Smok zionął ogniem! Straszliwy atak!</p>"));
+                                $("#message").perfectScrollbar('update');
                             }
                             else if ( damage > 100 ) {
                                 msg.prepend($("<p class=dragonSuccess>Smok wzbił się w powietrze i runął całym cielskiem na Twojego bohatera.</p>"));
+                                $("#message").perfectScrollbar('update');
                             };            
                             
                             
@@ -408,6 +423,7 @@ var msg = $("#message");
                             if ( playerHp <= 0 ) {
                                 console.log("Poległeś!");
                                 msg.prepend($("<p>Twój śmiałek zginął!</p>"));
+                                $("#message").perfectScrollbar('update');
                                 entrance.fadeIn();
                                 
 // Usunięcie zabitej postaci sprzed ogniska i jej ekwipunku
@@ -428,6 +444,7 @@ var msg = $("#message");
                                 if (isEmpty($('.fireplace'))) {
                                     call.hide();
                                     msg.prepend($("<p>Wszyscy śmiałkowie zginęli. Być może później będziesz mógł spotkać przy ognisku nowych ochotników. Tymczasem zmęczony walką smok zasnął w swojej pieczarze i nie zagraża okolicznym krainom.</p>"));
+                                    $("#message").perfectScrollbar('update');
                                 }
                                 
                                 
@@ -451,6 +468,7 @@ var msg = $("#message");
                         else {
                             console.log("Smok trafił, ale nie zadał Ci żadnych poważnych obrażeń!");
                             msg.prepend($("<p>Smok trafił, ale nie zadał Twojemu bohaterowi żadnych poważnych obrażeń!</p>"));
+                            $("#message").perfectScrollbar('update');
                         };
                     }
                     
@@ -459,6 +477,7 @@ var msg = $("#message");
                     else {
                         console.log("Smok nie trafił!");
                         msg.prepend($("<p>Twój bohater uchylił się przed atakiem smoka!</p>"));
+                        $("#message").perfectScrollbar('update');
                     };
                 }
                 
@@ -478,6 +497,7 @@ var msg = $("#message");
         else {
             console.log("Wybierz najpierw śmiałka");
             msg.prepend($("<p>Przed wywołaniem smoka lepiej poproś jakiegoś śmiałka, by walczył w Twoim imieniu.</p>"));
+            $("#message").perfectScrollbar('update');
         };   
     });
     
@@ -559,7 +579,7 @@ var msg = $("#message");
     var eq = $(".slot"),
         list1 = $("#list1"),
         list2 = $("#list2"),
-        msgSmith = $("#messageSmith");;
+        msgSmith = $("#messageSmith .content");;
     
     
 // Zakup/sprzedaż ekwipunku
@@ -577,9 +597,11 @@ var msg = $("#message");
             
             if ( $("#list2 ." + dataType).length == 1 ) {
                 msgSmith.prepend("<p>Nie możesz jednocześnie posiadać dwóch przedmiotów tego samego rodzaju. Pomyśl o innych klientach!</p>");
+                $("#messageSmith").perfectScrollbar('update');
             }
             else if ( gold < $(this).data("price") ) {
                 msgSmith.prepend("<p>Masz za mało złota, żeby zapłacić za ten przedmiot.</p>");
+                $("#messageSmith").perfectScrollbar('update');
             }
             else {
                 list2.append($(this));
@@ -597,6 +619,7 @@ var msg = $("#message");
             
             if ( $(this).prop("id") == "item_6" ) {
                 msgSmith.prepend("<p>Mam nadzieję, że to nie popsuje naszych relacji i pozostaniesz moim klientem, ale wolałbym żebyś zatrzymał ten amulet u siebie.</p>");
+                $("#messageSmith").perfectScrollbar('update');
             }
             else {
                 list1.append($(this));
@@ -610,15 +633,18 @@ var msg = $("#message");
     
 // Wyświetlenie informacji o przedmiocie po najechanu myszą
     
-    $(".slot img").on("mouseenter", function(e){         
-        $(this).siblings(".description").show();         
-        $(this).siblings(".description").css({             
-            top: "120px",             
-            left: 0         
-        });     
-    });  
+//    $(".slot img").on("mouseenter", function(e){         
+//        $(this).siblings(".description").show();         
+//        $(this).siblings(".description").css({             
+//            top: "120px",             
+//            left: 0         
+//        });     
+//    });  
+//    
+//    $(".slot img").on("mouseout", function(e){         
+//        $(this).siblings(".description").hide();     
+//    });   
     
-    $(".slot img").on("mouseout", function(e){         
-        $(this).siblings(".description").hide();     
-    });   
+    
+
 });

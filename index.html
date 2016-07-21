@@ -6,7 +6,7 @@
         <title>Ultimate Dragon Slayer</title>
         <link rel="stylesheet" type="text/css" href="scss/style.css">
         <script src="js/jquery-2.2.4.min.js"></script>
-        <script src="js/nanoscroller.js"></script>
+        <script src="js/perfect-scrollbar.jquery.min.js"></script>
         <script src="js/app.js"></script>    
     </head>
     <body>
@@ -29,7 +29,7 @@
 <!--Strona główna--> 
         <section id="tab_1" class="tabs">
             <div class="mainWidth">
-                <div class="paper nano">
+                <div class="paper container">
                     <div class="content">
                     <h3>15. lipca 2016 r.</h3>
                     <p>Opublikowano wersję 1.0:
@@ -50,7 +50,7 @@
 <!--Historia i instrukcja gry-->
         <section id="tab_2" class="tabs">
             <div class="mainWidth">
-                <div class="paper nano">
+                <div class="paper container">
                     <div class="content">
                     <p>To zwyczajna historia, która mogła przydarzyć się każdemu z nas. Gdy do spokojnej i malowniczej krainy przybywa smok, jej mieszkańcy przeczuwają, że potworowi nie należy ufać. Już pierwszego dnia swojego pobytu w nowym miejscu smok rozpala do czerwoności jedną z tutejszych wiosek. Ten występek sprawia, że ludzie zaczynają traktować bestię z dystans<del>em</del><ins>u</ins>, najczęściej strzałami, nachodzą ją w nocy z widłami i obrzucają obelżywymi tekstami.
                     <br>
@@ -146,7 +146,8 @@
                 <div id="blacksmith"></div>
                 <div class="paper"> 
                      <div id="paperSmith">
-                         <div id="messageSmith">
+                         <div id="messageSmith" class="container">
+                             <div class="content"></div>
                          </div>
                      </div>
                     
@@ -295,7 +296,8 @@
             <div id="helper">
                 <div id="squire"></div>
                 <div id="paper">
-                    <div id="message">
+                    <div id="message" class="container">
+                        <div class="content"></div>
                     </div>
                 </div>
         </section>
