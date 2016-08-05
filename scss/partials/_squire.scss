@@ -1,3 +1,50 @@
+//@media only screen and (max-width: $mobile) {
+//    
+//}
+//
+@media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
+     #helper {
+        position: absolute;
+        bottom: 0;
+        right: 0vw;
+        width: 500px;
+        z-index: 9999;
+    }
+    
+    #paper, #paperSmith {
+        background-color: rgba(210, 159, 76, 0.85);
+        color: $text;
+        border: 1px solid $colorMenu;
+        border-radius: 5px;
+        width: 80vw;
+        height: 10vh;
+        position: fixed;
+        bottom: 2px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        overflow-y: hidden;
+    }
+
+    
+    #message, #messageSmith {
+        width: 78vw;
+        padding: 1vh 1vw;
+        line-height: 6vh;
+        height: 9vh;
+        position: absolute;
+        overflow-y: auto;
+        font-family: 'Almendra-Regular', sans-serif;
+        font-size: 5vh;
+    }
+    
+    #squire, #blacksmith {
+        display: none;
+    
+    }
+}
+
+
 @media only screen and (min-width: $tablet + 1px) and (orientation: landscape) {
     
     #helper {

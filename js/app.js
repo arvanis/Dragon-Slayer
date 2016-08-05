@@ -608,6 +608,8 @@ var msg = $("#message .content");
                 gold -= $(this).data("price");
                 $(this).children(".moveBtn").text("Sprzedaj"); 
                 pocket.text(gold);
+                list1.parent(".container").perfectScrollbar('update');
+                list2.parent(".container").perfectScrollbar('update');
             };
         }
         
@@ -626,6 +628,8 @@ var msg = $("#message .content");
                 gold += $(this).data("price");
                 $(this).children(".moveBtn").text("Kup");
                 pocket.text(gold);
+                list1.parent(".container").perfectScrollbar('update');
+                list2.parent(".container").perfectScrollbar('update');
             };
         };
     });
